@@ -3,6 +3,7 @@
 ########################################################################################################################
 from ase.build import bulk
 from ase.calculators.vasp import Vasp2
+from ase.io import read
 
 fermi = True  # Get fermi energy, True/False.
 
@@ -11,7 +12,7 @@ Set up system and parameter DFT. Bulk Pd is test system. Probably better to read
 change the script.
 '''
 # The system.
-atoms = bulk('Pd', a=3.929)
+atoms = read('./POSCAR')
 
 # DFT parameters
 dft = Vasp2(atoms=atoms,      # working structure.
